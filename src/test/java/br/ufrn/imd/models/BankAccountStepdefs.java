@@ -29,6 +29,21 @@ public class BankAccountStepdefs {
         assertEquals(double1, saldo);
     }
 
+    @Given("um BankAccount com saldo de R$ {double}")
+    public void um_conta_de_banco__com_saldo_de_r$(Double double1) {
+        bankAccount = new BankAccount(123456, 123, double1);
+    }
+
+    @When("depositar R$ {double}")
+    public void retirar_r$(Double double1) {
+        bankAccount.withdraw(double1);
+    }
+
+    @Then("o saldo do BankAccount deve ser R$ {double}")
+    public void o_saldo_da_conta_deve_ser_r$(Double double1) {
+        var saldo = bankAccount.getBalance();
+        assertEquals(double1, saldo);
+    }
 
     @Given("um BankAccount com saldo de R$ {double} e um banco destino com saldo de R$ {double}")
     public void um_bank_account_com_saldo_de_r$(Double double1, Double double2) {
