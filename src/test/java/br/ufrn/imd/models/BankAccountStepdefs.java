@@ -44,7 +44,7 @@ public class BankAccountStepdefs {
     }
     @Then("o saldo do BankAccount de destino deve ser R$ {double}")
     public void o_saldo_do_bank_account_de_destino_deve_ser_r$(Double double1) {
-        var saldo1 = bankAccount.getBalance();
+        var saldo1 = bankDestiny.getBalance();
         assertEquals(double1, saldo1);
     }
 }
